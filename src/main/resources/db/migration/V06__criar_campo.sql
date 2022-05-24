@@ -1,0 +1,6 @@
+CREATE TABLE campo(
+	codigo SERIAL PRIMARY KEY,
+	nome VARCHAR (50) NOT NULL,
+	obrigatorio BOOLEAN NOT NULL,
+	UNIQUE(nome)
+);

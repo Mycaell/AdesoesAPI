@@ -1,0 +1,3 @@
+CREATE TABLE produto(
+	codigo SERIAL PRIMARY KEY
+);

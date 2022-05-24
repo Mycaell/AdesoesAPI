@@ -1,0 +1,32 @@
+services:
+  
+    # BARRAMENTO DE MENSAGERIA
+    rabbitmq:
+        container_name: rabbitmq
+        image: rabbitmq:3.7.5-management-alpine
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        environment:
+            RABBITMQ_DEFAULT_USER: rabbitmq
+            RABBITMQ_DEFAULT_PASS: cramunhao
+            
+         
+         
+    # DATABASE
+    db-adesoes:
+        container_name: db-adesoes
+        image: postgres:12-alpine
+        restart: always
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_DB: adesoes
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: cramunhao
+        volumes:
+            - D:\Dados_Adesoes:/var/lib/postgresql/data      
+         
+  
+   # add servico A (produtor  )   
+   # add servico B (consumidor)    
